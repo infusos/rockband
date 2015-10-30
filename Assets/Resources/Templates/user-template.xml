@@ -1,0 +1,29 @@
+<user>
+	<profile>
+		<id>1</id>
+		<language>es</language>
+		<name>Dani Santeugini</name>
+		<energy>100</energy>
+		<money>100</money>
+		<tokens>100</tokens>
+		<available-locations>
+			<location>
+				<id>1</id>
+				<name>Location 1</name>
+			</location>
+			<location>
+				<id>2</id>
+				<name>Location 2</name>
+			</location>
+			<location>
+				<id>2</id>
+				<name>Location 3</name>
+			</location>
+		</available-locations>
+		<last-location>1</last-location>
+		<available-cities>
+			<city>Barcelona</city>
+			<city>Los Angeles</city>
+		</available-cities>
+	</profile>
+</user>

@@ -1,0 +1,17 @@
+﻿{
+  "locations": [
+    {
+      "id": "1",
+      "name": "Location 1",
+      "city": "Barcelona"
+    },
+    {
+      "id": "2",
+      "name": "Location 2"
+    },
+    {
+      "id": "2",
+      "name": "Location 3"
+    }
+  ]
+}
