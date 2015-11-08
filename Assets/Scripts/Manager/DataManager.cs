@@ -59,7 +59,7 @@ public class DataManager : MonoBehaviour {
 		User user = loadUserTemplate ();
 		Game game = loadGameTemplate ();
 		game.user = user;
-		SaveUserData (game, "user.dat", true);
+		SaveUserData (game, Constants.USERDATA_FILE, true);
 	}
 
 	private Game loadGameTemplate(){
@@ -108,7 +108,6 @@ public class DataManager : MonoBehaviour {
 	}
 
 	IEnumerator iLoadAssets(){
-		yield return new WaitForSeconds(4);
-		BaseApplication.EventsManagerInstance.OnDataManager ();
+		yield return LoadUserData (Constants.USERDATA_FILE);
 	}
 }

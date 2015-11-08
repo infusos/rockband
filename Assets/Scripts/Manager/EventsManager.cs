@@ -3,11 +3,19 @@ using System.Collections;
 
 public class EventsManager : MonoBehaviour{
 
+	/***************/
+	/* CORE EVENTS */
+	/***************/
+
 	public delegate void DataManagerListener();
 	public event DataManagerListener OnDataManagerListener;
 
 	public delegate void UserDataListener (int status, object game);
 	public event UserDataListener OnUserDataListener;
+
+	/***************/
+	/* GAME EVENTS */
+	/***************/
 
 	public delegate void InitializeGameListener (Game game);
 	public event InitializeGameListener OnInitializeGameListener;
@@ -18,6 +26,25 @@ public class EventsManager : MonoBehaviour{
 	public delegate void SceneChangedListener();
 	public event SceneChangedListener OnSceneChangedListener;
 
+	public delegate void ChangeBackgroundListener ();
+	public event ChangeBackgroundListener OnChangeBackgroundListener;
+
+	public delegate void LocationChangedListener ();
+	public event LocationChangedListener OnLocationChangedListener;
+
+	/*************/
+	/* UI EVENTS */
+	/*************/
+
+	public delegate void ItemClickedListener(int itemId);
+	public event ItemClickedListener OnItemClickListener;
+
+	public void OnLocationChanged(){
+		if (OnLocationChangedListener != null) {
+			OnLocationChangedListener();
+		}
+	}
+	
 	public void OnDataManager(){
 		if (OnDataManagerListener != null) {
 			OnDataManagerListener();
@@ -45,6 +72,18 @@ public class EventsManager : MonoBehaviour{
 	public void OnSceneChanged(){
 		if (OnSceneChangedListener != null) {
 			OnSceneChangedListener();
+		}
+	}
+
+	public void OnChangeBackground(){
+		if (OnChangeBackgroundListener != null) {
+			OnChangeBackgroundListener ();
+		}
+	}
+
+	public void OnItemClick(int itemId){
+		if (OnItemClickListener != null) {
+			OnItemClickListener(itemId);
 		}
 	}
 }

@@ -5,8 +5,11 @@ public class GameManager : MonoBehaviour {
 
 	public Game game { get; set; }
 
-	void Start () {
+	private BackgroundController mBackgroundController;
+	private EventsManager mEventsManager = BaseApplication.EventsManagerInstance;
 
+	void Start () {
+		mEventsManager.OnLocationChangedListener += setLocation;
 	}
 	
 	void Update () {
@@ -15,17 +18,22 @@ public class GameManager : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level) {
 		if (level == Constants.LEVEL_LOCATION) {
-			SetLocationBackground();
+			mBackgroundController = GameObject.Find("cnvBackground").GetComponent<BackgroundController>();
+			setLocation();
 		}
 	}
 
 	public void SetGame(Game game){
 		this.game = game;
-		BaseApplication.EventsManagerInstance.OnInitializedGame ();
+		mEventsManager.OnInitializedGame ();
 	}
 
-	public void SetLocationBackground(){
-		print (game.user.money);
+	private void setLocation(){
+		setBackground ();
+	}
+
+	private void setBackground(){
+		mBackgroundController.ChangeBackground (game.currentLocation.id);
 	}
 
 }

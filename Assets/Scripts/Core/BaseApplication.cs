@@ -24,7 +24,7 @@ public class BaseApplication : MonoBehaviour {
 		SceneManagerInstance  = this.gameObject.AddComponent<SceneManager> ();
 		GameManagerInstance   = this.gameObject.AddComponent<GameManager> ();
 
-		initManagers ();
+		Invoke ("initManagers", Constants.SPLASH_TIME);
 
 	}
 
@@ -38,7 +38,7 @@ public class BaseApplication : MonoBehaviour {
 
 	private void onDataManagerLoaded(){
 		Debug.Log ("Assets loaded.");
-		DataManagerInstance.LoadUserData ("user.dat");
+		DataManagerInstance.LoadUserData (Constants.USERDATA_FILE);
 	}
 
 	private void onUserData(int status, object game){
@@ -62,6 +62,8 @@ public class BaseApplication : MonoBehaviour {
 
 	private void onInitializedGame(){
 		Debug.Log ("Initialized game.");
-		DataManagerInstance.SaveUserData (GameManagerInstance.game, "user.dat", true);
+		DataManagerInstance.SaveUserData (GameManagerInstance.game, Constants.USERDATA_FILE, true);
 	}
+
+
 }
