@@ -29,5 +29,6 @@ public class Constants {
 	public static int BTN_ENERGY = 3;
 	public static int BTN_TOKENS = 2;
 	public static int BTN_MONEY = 1;
+	public static int BTN_MISSIONS_LIST = 4;
 
 }

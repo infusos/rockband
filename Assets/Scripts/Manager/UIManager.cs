@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour {
 	private EventsManager mEventsManager = BaseApplication.EventsManagerInstance;
 	public GameObject NavigationBar;
 	public GameObject OptionsPopup;
+	public GameObject MissionsList;
 
 	public Text LocationText;
 
@@ -25,6 +26,9 @@ public class UIManager : MonoBehaviour {
 		}
 		if (id == Constants.BTN_CLOSE_OPTIONS_POPUP) {
 			OptionsPopup.GetComponent<PopupController>().Show(false);
+		}
+		if (id == Constants.BTN_MISSIONS_LIST) {
+			MissionsList.GetComponent<MissionsListController>().Toggle();
 		}
 	}
 

@@ -12,7 +12,4 @@ public class OptionsPopupController : PopupController {
 	
 	}
 
-	public void ShowPopup(bool show){
-		this.gameObject.SetActive (show);
-	}
 }
