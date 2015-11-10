@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
+using DG.Tweening;
 
 public class BaseApplication : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class BaseApplication : MonoBehaviour {
 	public static GameManager GameManagerInstance;
 
 	void Start () {
+
+		DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
 
 		GameObject.DontDestroyOnLoad (this);
 

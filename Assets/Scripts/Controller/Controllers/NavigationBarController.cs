@@ -11,7 +11,4 @@ public class NavigationBarController : BaseController {
 	
 	}
 
-	public void OnOptionsClick(){
-		mEventsManager.OnItemClick (Constants.BTN_OPTIONS);
-	}
 }

@@ -6,11 +6,12 @@ public class UIManager : MonoBehaviour {
 
 	private GameManager mGameManager = BaseApplication.GameManagerInstance;
 	private EventsManager mEventsManager = BaseApplication.EventsManagerInstance;
+	public GameObject NavigationBar;
+	public GameObject OptionsPopup;
 
 	public Text LocationText;
 
 	void Start () {
-		mEventsManager.OnItemClickListener += onItemClick;
 		mEventsManager.OnLocationChangedListener += onLocationChanged;
 	}
 
@@ -18,8 +19,13 @@ public class UIManager : MonoBehaviour {
 	
 	}
 
-	private void onItemClick(int itemId){
-		Debug.Log ("Item with id: "+itemId+ " clicked");
+	public void OnClick(int id){
+		if (id == Constants.BTN_OPTIONS) {
+			OptionsPopup.GetComponent<PopupController>().Show(true);
+		}
+		if (id == Constants.BTN_CLOSE_OPTIONS_POPUP) {
+			OptionsPopup.GetComponent<PopupController>().Show(false);
+		}
 	}
 
 	private void onLocationChanged(){

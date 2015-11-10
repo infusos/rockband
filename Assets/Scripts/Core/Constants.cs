@@ -24,7 +24,10 @@ public class Constants {
 	public static int LEVEL_TITLE = 1;
 	public static int LEVEL_LOCATION = 2;
 
+	public static int BTN_CLOSE_OPTIONS_POPUP = -1;
 	public static int BTN_OPTIONS = 0;
-	public static int BTN_CLOSE_OPTIONS_POPUP = 1;
+	public static int BTN_ENERGY = 3;
+	public static int BTN_TOKENS = 2;
+	public static int BTN_MONEY = 1;
 
 }

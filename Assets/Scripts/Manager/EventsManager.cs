@@ -36,9 +36,6 @@ public class EventsManager : MonoBehaviour{
 	/* UI EVENTS */
 	/*************/
 
-	public delegate void ItemClickedListener(int itemId);
-	public event ItemClickedListener OnItemClickListener;
-
 	public void OnLocationChanged(){
 		if (OnLocationChangedListener != null) {
 			OnLocationChangedListener();
@@ -78,12 +75,6 @@ public class EventsManager : MonoBehaviour{
 	public void OnChangeBackground(){
 		if (OnChangeBackgroundListener != null) {
 			OnChangeBackgroundListener ();
-		}
-	}
-
-	public void OnItemClick(int itemId){
-		if (OnItemClickListener != null) {
-			OnItemClickListener(itemId);
 		}
 	}
 }
